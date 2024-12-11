@@ -1,10 +1,11 @@
-import MenuListIcon from "../MenuListIcon/MenuListIcon";
+import MenuListIcon from "../../UI/MenuListIcon/MenuListIcon";
 
-interface MenuListSectionProps {
+
+interface MenuTitleProps {
     name:string;
 }
 
-export default function MenuListSection ({name}:MenuListSectionProps) {
+export default function MenuTitle ({name}:MenuTitleProps) {
 
     return(
         <section className="w-full flex justify-center ">
@@ -13,7 +14,6 @@ export default function MenuListSection ({name}:MenuListSectionProps) {
                 <p className="text-default text-3xl">{name}</p>
                 <MenuListIcon side={true} />
             </div>
-            
         </section>
     )
 }
