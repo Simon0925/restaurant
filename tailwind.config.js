@@ -15,6 +15,15 @@ export default {
         borderCustomHover: "#4E4C48",
         default: "#EFE7D2",
       },
+      borderWidth: {
+        icon: '1px', 
+      },
+      // width: {
+      //   'custom-sm': '24rem', 
+      // },
+      // height: {
+      //   'custom-sm': '24rem',
+      // },
     },
   },
   plugins: [],
