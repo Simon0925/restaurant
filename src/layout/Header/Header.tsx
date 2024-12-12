@@ -1,4 +1,4 @@
-import images from '../../assets/header/header-menu-background.webp'; // Fixed typo in `imges` to `images`
+import images from '../../assets/header/header-menu-background.webp'; 
 import NavigatePanel from '../../components/NavigatePanel/NavigatePanel';
 
 export default function Header() {
@@ -9,7 +9,7 @@ export default function Header() {
                 src={images}
                 alt="Header Menu Background"
             />
-            <div className="absolute top-0">
+            <div className="absolute top-8 left-1/2 transform -translate-x-1/2">
                 <NavigatePanel />
             </div>
         </header>
