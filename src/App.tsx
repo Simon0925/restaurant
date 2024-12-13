@@ -12,6 +12,7 @@ export default function App() {
         </div>
           <Main />
       </div>
+      <div id="modal-root"></div>
     </div>
   );
 }
