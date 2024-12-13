@@ -1,0 +1,22 @@
+export const nav = [
+    {
+        name:"menu",
+        to:"menu"
+    },
+    {
+        name:"Reservation",
+        to:"reservation"
+    },
+    {
+        name:"About",
+        to:"about"
+    },
+    {
+        name:"Contact",
+        to:"contact"
+    },
+    {
+        name:"Blog",
+        to:"blog"
+    },
+]

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router";
 import NavigateModalIcon from "../../UI/NavigateModalIcon/NavigateModalIcon";
 import BurgerMenuClose from "../../UI/BurgerMenuClose/BurgerMenuClose";
-
+import {nav} from './services/nav'
 
 interface NavigateModalProps {
     onClick:(e:boolean) => void
@@ -12,29 +12,7 @@ interface NavigateModalProps {
 
 export default function NavigateModal ({onClick}:NavigateModalProps){
 
-    const nav = [
-        {
-            name:"menu",
-            to:"menu"
-        },
-        {
-            name:"Reservation",
-            to:"reservation"
-        },
-        {
-            name:"About",
-            to:"about"
-        },
-        {
-            name:"Contact",
-            to:"contact"
-        },
-        {
-            name:"Blog",
-            to:"blog"
-        },
-    ]
-
+   
     return(
         <div className="w-lvw h-dvh bg-[#0A0B0A] fixed top-0 left-0 z-50 p-6 ">
             <div className="bg-[#111111] w-full h-full  rounded-2xl border-[1px3] border-[#333330] flex flex-col gap-6 items-center justify-center relative">
@@ -44,6 +22,7 @@ export default function NavigateModal ({onClick}:NavigateModalProps){
                     <NavigateModalIcon />
                     {nav.map((n,i)=>(
                          <NavLink
+                         onClick={()=>onClick(false)}
                          to={n.to}
                          key={i}
                          className={
