@@ -8,7 +8,7 @@ import BookATable from '../../pages/BookATable/BookATable';
 
 export default function Main () {
     return(
-    <main className="w-full h-dvh">
+    <main className="h-dvh">
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/menu" element={<Menu />} />

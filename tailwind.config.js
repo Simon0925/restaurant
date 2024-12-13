@@ -18,6 +18,10 @@ export default {
       borderWidth: {
         icon: '1px', 
       },
+      fontFamily:{
+        logo:"URW Chancery L, cursive",
+        pageName:"Didot, serif"
+      }
       // width: {
       //   'custom-sm': '24rem', 
       // },
