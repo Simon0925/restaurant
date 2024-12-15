@@ -20,3 +20,28 @@
     transition: opacity 1s ease, transform 1s ease;
   }
   
+  .loading {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    margin-left: -40vw;
+    filter: blur(20vw);
+    animation: loading 0.5s forwards; 
+    z-index: 999;
+  }
+  
+  .loading div {
+    width: 200vw;
+    height: 140vh;
+    margin-top: -20vh;
+    background: black; 
+  }
+  
+  @keyframes loading {
+    0% {
+      margin-left: -40vw;
+    }
+    100% {
+      margin-left: -220vw;
+    }
+  }

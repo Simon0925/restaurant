@@ -35,7 +35,10 @@ export default function Main() {
                         exitActive: styles['fade-exit-active'],
                     }}
                 >
+                    
                     <div className="relative z-10 w-full block xl:flex xl:flex-row overflow-y-scroll justify-between h-dvh">
+            <div className={styles.loading}><div></div></div>
+
                         <Banner param={location.pathname} />
 
                         <Routes location={location}>
