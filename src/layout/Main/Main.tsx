@@ -1,25 +1,55 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from '../../pages/Home/Home';
-import Error from '../../pages/Error/Error'
+import Error from '../../pages/Error/Error';
 import Menu from '../../pages/Menu/Menu';
 import About from '../../pages/About/About';
 import BookATable from '../../pages/BookATable/BookATable';
 import Contact from '../../pages/Contact/Contact';
 import Blog from '../../pages/Blog/Blog';
+import Banner from '../../components/Banner/Banner';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import styles from './Main.module.scss';
+import { useEffect, useState } from 'react';
 
+export default function Main() {
+    const location = useLocation();
 
-export default function Main () {
-    return(
-    <main className="h-dvh">
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/reservation" element={<BookATable />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="*" element={<Error />} />
-        </Routes>
-    </main>
-    )
+    const [currentPath, setCurrentPath] = useState('');
+
+    useEffect(() => {
+        if (currentPath !== location.pathname) {
+            setCurrentPath(location.pathname);
+        }
+    }, [location]);
+
+    return (
+        <main className="h-dvh">
+            <TransitionGroup component={null}>
+                <CSSTransition
+                    key={location.key}
+                    timeout={1000}
+                    classNames={{
+                        enter: styles['fade-enter'],
+                        enterActive: styles['fade-enter-active'],
+                        exit: styles['fade-exit'],
+                        exitActive: styles['fade-exit-active'],
+                    }}
+                >
+                    <div className="relative z-10 w-full block xl:flex xl:flex-row overflow-y-scroll justify-between h-dvh">
+                        <Banner param={location.pathname} />
+
+                        <Routes location={location}>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/menu" element={<Menu />} />
+                            <Route path="/about" element={<About />} />
+                            <Route path="/reservation" element={<BookATable />} />
+                            <Route path="/contact" element={<Contact />} />
+                            <Route path="/blog" element={<Blog />} />
+                            <Route path="*" element={<Error />} />
+                        </Routes>
+                    </div>
+                </CSSTransition>
+            </TransitionGroup>
+        </main>
+    );
 }

@@ -1,22 +1,21 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router";
 
 import {headerData} from './services/headerData'
 
 
-export const useHeaderData = () =>{
+export const useBannerContent = () =>{
 
     const [currentData,setCurrentData] = useState({
         name:"",
         media:''
     })
 
-    const location = useLocation();
+    const [location,setLocation]  = useState('')
 
     useEffect(()=>{
-        const path = location.pathname
+        
         headerData.map((e)=>{
-            if(path === e.path){
+            if(location === e.path){
                 setCurrentData({
                     name:e.name,
                     media:e.media 
@@ -28,6 +27,7 @@ export const useHeaderData = () =>{
 
 
     return {
+        setLocation,
         currentData
     }
 

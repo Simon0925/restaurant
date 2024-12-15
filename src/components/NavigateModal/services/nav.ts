@@ -1,22 +1,22 @@
 export const nav = [
     {
         name:"menu",
-        to:"menu"
+        to:"/menu"
     },
     {
         name:"Reservation",
-        to:"reservation"
+        to:"/reservation"
     },
     {
         name:"About",
-        to:"about"
+        to:"/about"
     },
     {
         name:"Contact",
-        to:"contact"
+        to:"/contact"
     },
     {
         name:"Blog",
-        to:"blog"
+        to:"/blog"
     },
 ]

@@ -23,7 +23,7 @@ export default function NavigatePanel () {
             <nav className="flex gap-1 items-center">
                 <div className="hidden md:block">
                     <NavLink
-                        to={"menu"}
+                        to={"/menu"}
                         className={
                             'text-default border-2 border-[#0a0b0a] rounded-lg text-sm px-3 py-2 hover:border-borderCustom hover:bg-[#111111]'
                         }
@@ -31,7 +31,7 @@ export default function NavigatePanel () {
                         Menu
                     </NavLink>
                     <NavLink
-                        to={"about"}
+                        to={"/about"}
                         className={
                             'text-default border-2 border-[#0a0b0a] rounded-lg text-sm px-3 py-2 hover:border-borderCustom hover:bg-[#111111]'
                         }
@@ -39,7 +39,7 @@ export default function NavigatePanel () {
                         About
                     </NavLink>
                 </div>
-                <NavLink to={"reservation"} className={'text-default rounded-lg bg-[#111111] text-sm px-3 py-2 border-borderCustom border-[1px]'}>Book A Table</NavLink>
+                <NavLink to={"/reservation"} className={'text-default rounded-lg bg-[#111111] text-sm px-3 py-2 border-borderCustom border-[1px]'}>Book A Table</NavLink>
 
             </nav>
         </div>
