@@ -10,14 +10,15 @@ import Banner from '../../components/Banner/Banner';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styles from './Main.module.scss';
 import { useEffect, useState } from 'react';
+import { useRef } from 'react';
 
 export default function Main() {
     const location = useLocation();
-
     const [currentPath, setCurrentPath] = useState('');
+    const nodeRef = useRef(null); 
 
     useEffect(() => {
-        if (currentPath !== location.pathname) {
+        if (currentPath !== location.pathname && !location.hash) {
             setCurrentPath(location.pathname);
         }
     }, [location]);
@@ -26,8 +27,9 @@ export default function Main() {
         <main className="h-dvh">
             <TransitionGroup component={null}>
                 <CSSTransition
-                    key={location.key}
-                    timeout={1000}
+                    key={currentPath}
+                    timeout={100}
+                    nodeRef={nodeRef} 
                     classNames={{
                         enter: styles['fade-enter'],
                         enterActive: styles['fade-enter-active'],
@@ -35,12 +37,9 @@ export default function Main() {
                         exitActive: styles['fade-exit-active'],
                     }}
                 >
-                    
-                    <div className="relative z-10 w-full block xl:flex xl:flex-row overflow-y-scroll justify-between h-dvh">
-            <div className={styles.loading}><div></div></div>
-
+                    <div ref={nodeRef} className="relative z-10 w-full block xl:flex xl:flex-row overflow-y-scroll justify-between h-dvh">
+                        <div className={styles.loading}><div></div></div>
                         <Banner param={location.pathname} />
-
                         <Routes location={location}>
                             <Route path="/" element={<Home />} />
                             <Route path="/menu" element={<Menu />} />

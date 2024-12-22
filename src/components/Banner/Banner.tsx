@@ -4,11 +4,16 @@ import { useBannerContent } from '../../hooks/useBannerContent/useBannerContent'
 import BannerContent from '../BannerContent/BannerContent';
 
 import NavigatePanel from '../NavigatePanel/NavigatePanel';
+
 import BannerHome from '../BannerHome/BannerHome';
+
 import  video  from './video/homeVideo.mp4';
+
 interface BannerProps {
     param:string;
 }
+
+
 
 export default function Banner({param}:BannerProps) {
     

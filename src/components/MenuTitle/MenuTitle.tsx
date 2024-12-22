@@ -11,7 +11,7 @@ export default function MenuTitle ({name}:MenuTitleProps) {
         <section className="w-full flex justify-center ">
             <div className=" flex gap-4">
                 <MenuListIcon side={false} />
-                <p className="text-default text-2xl sm:text-3xl">{name}</p>
+                <p className="text-default text-2xl sm:text-3xl">{name.toLocaleUpperCase()}</p>
                 <MenuListIcon side={true} />
             </div>
         </section>

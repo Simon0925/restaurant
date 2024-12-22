@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Polygon from "../../UI/Polygon/Polygon";
 import SocialMedia from "../../UI/SocialMedia/SocialMedia";
 import { Transition } from "react-transition-group";
@@ -12,6 +12,9 @@ interface BannerContentProps {
 export default function BannerHome({ name, src }: BannerContentProps) {
 
     const [show, setShow] = useState(false);
+
+    const nodeRef = useRef<HTMLSpanElement | null>(null);
+
 
     useEffect(() => {
         setShow(true);
@@ -34,6 +37,7 @@ export default function BannerHome({ name, src }: BannerContentProps) {
                 in={show} 
                 timeout={500}
                 unmountOnExit
+                nodeRef={nodeRef}
             >
                 {(state) => (
             <span className={`
