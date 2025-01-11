@@ -20,7 +20,9 @@ export default {
       },
       fontFamily:{
         logo:"URW Chancery L, cursive",
-        pageName:"Didot, serif"
+        pageName:"Didot, serif",
+        HeaderTitle:"Optima, sans-serif"
+        
       }
       // width: {
       //   'custom-sm': '24rem', 

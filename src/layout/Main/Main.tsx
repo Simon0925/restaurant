@@ -6,11 +6,12 @@ import About from '../../pages/About/About';
 import BookATable from '../../pages/BookATable/BookATable';
 import Contact from '../../pages/Contact/Contact';
 import Blog from '../../pages/Blog/Blog';
-import Banner from '../../components/Banner/Banner';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styles from './Main.module.scss';
 import { useEffect, useState } from 'react';
 import { useRef } from 'react';
+import NavigatePanel from '../../components/NavigatePanel/NavigatePanel';
+import BlogPost from '../../pages/BlogPost/BlogPost';
 
 export default function Main() {
     const location = useLocation();
@@ -39,7 +40,9 @@ export default function Main() {
                 >
                     <div ref={nodeRef} className="relative z-10 w-full block xl:flex xl:flex-row overflow-y-scroll justify-between h-dvh">
                         <div className={styles.loading}><div></div></div>
-                        <Banner param={location.pathname} />
+                        <div className="absolute z-50 top-16 left-1/2 transform -translate-x-1/2 xl:left-72  ">
+                            <NavigatePanel />
+                        </div>
                         <Routes location={location}>
                             <Route path="/" element={<Home />} />
                             <Route path="/menu" element={<Menu />} />
@@ -47,6 +50,7 @@ export default function Main() {
                             <Route path="/reservation" element={<BookATable />} />
                             <Route path="/contact" element={<Contact />} />
                             <Route path="/blog" element={<Blog />} />
+                            <Route path="/blog/:slug" element={<BlogPost />} />
                             <Route path="*" element={<Error />} />
                         </Routes>
                     </div>

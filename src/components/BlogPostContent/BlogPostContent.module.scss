@@ -1,0 +1,10 @@
+.content{
+    @apply flex flex-col gap-6;
+
+    h3{
+        @apply text-default uppercase text-3xl
+    }
+    p{
+        @apply text-default text-sm
+    }
+}

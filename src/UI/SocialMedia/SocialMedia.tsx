@@ -12,7 +12,7 @@ export default function SocialMedia () {
                         cursor-pointer flex items-center justify-center
                         hover:border-[#504E4A]
                     ">
-                        <InstagramSVG />
+                        <InstagramSVG w={"18px"} h={"18px"} />
                     </div>
                     <div className="w-[36px] h-[36px] border-[1px]
                         border-borderCustom rounded-3xl 

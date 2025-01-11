@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import './App.css';
 import Main from './layout/Main/Main';
+import NavigatePanel from './components/NavigatePanel/NavigatePanel';
 
 
 export default function App() {

@@ -32,7 +32,7 @@ export default function MenuList() {
     };
 
     return (
-        <div className="w-full">
+        <section className="w-full">
             <div className="w-full rounded-xl border-2 p-8 border-borderCustom flex flex-col sm:p-16">
                 <NavMenuList 
                     onScrollTo={scrollToSection} 
@@ -48,6 +48,6 @@ export default function MenuList() {
                     <MenuSection name={"Special Rolls"} />
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
